@@ -1,0 +1,1 @@
+{ "name": "WhatsApp to RAG Orchestrator", "flow": [ { "trigger": "WhatsApp Business API: New Message", "action": "HTTP Request: POST to /query", "payload": { "text": "{{message_body}}" } }, { "action": "WhatsApp Business API: Send Message", "payload": { "to": "{{sender_id}}", "text": "{{http_response.answer}}" } } ] }
